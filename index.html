@@ -6,11 +6,9 @@
     <title>Trolled by Your Ex</title>
     <style>
         html, body {
-            height: 100%; /* Fiksna visina za celu stranicu */
+            height: 100%;
             margin: 0;
             padding: 0;
-        }
-        body {
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
@@ -18,25 +16,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%;
             text-align: center;
         }
         h1 {
-			
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 10px;
             animation: shake 0.5s infinite;
         }
         @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
+            0%, 100% { transform: translateX(0); }
+            25%, 75% { transform: translateX(-5px); }
             50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
         }
         .troll {
             font-size: 4em;
-            margin:  0;
+            margin: 0;
             animation: spin 2s linear infinite;
         }
         @keyframes spin {
@@ -58,29 +52,55 @@
             background-color: darkred;
         }
         .love-message {
-            font-size: 2em;
+            font-size: 1.8em;
             color: red;
-            margin-top: 5px;
+            margin-top: 10px;
         }
         .content-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80%;
-            margin-top: 40px;
+            width: 90%;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
         }
         .video-container {
-            margin: 0 20px;
+            max-width: 100%;
+            text-align: center;
         }
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            width: 300px;
-        }
-        .image-container img {
-            width: 300px;
+        video {
+            width: 100%;
+            max-width: 600px;
             height: auto;
             border-radius: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-container img {
+                max-width: 150px;
+            }
+            .play-button {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            .love-message {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -93,7 +113,7 @@
             <img src="meg1.jpg" alt="Meg1" />
         </div>
         <div class="video-container">
-            <video id="rickroll-video" width="600" height="400" autoplay loop muted>
+            <video id="rickroll-video" autoplay loop muted>
                 <source src="rick.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -109,9 +129,9 @@
     <script>
         function playVideo() {
             var video = document.getElementById('rickroll-video');
-            video.muted = false;  // Unmute the video
-            video.play();  // Start playing the video with sound
+            video.muted = false;
+            video.play();
         }
     </script>
 </body>
-</html> 
+</html>
