@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trolled by Your Ex</title>
+    <style>
+        html, body {
+            height: 100%; /* Fiksna visina za celu stranicu */
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+        h1 {
+			
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: shake 0.5s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+        .troll {
+            font-size: 4em;
+            margin:  0;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .play-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover {
+            background-color: darkred;
+        }
+        .love-message {
+            font-size: 2em;
+            color: red;
+            margin-top: 5px;
+        }
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin-top: 40px;
+        }
+        .video-container {
+            margin: 0 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>You’ve just been trolled by your ex!</h1>
+    <div class="troll">😈</div>
+    
+    <div class="content-container">
+        <div class="image-container">
+            <img src="meg1.jpg" alt="Meg1" />
+        </div>
+        <div class="video-container">
+            <video id="rickroll-video" width="600" height="400" autoplay loop muted>
+                <source src="rick.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="play-button" onclick="playVideo()">Play Sound</button>
+        </div>
+        <div class="image-container">
+            <img src="meg2.jpg" alt="Meg2" />
+        </div>
+    </div>
+
+    <div class="love-message">I still think about you Meg ❤️❤️❤️</div>
+
+    <script>
+        function playVideo() {
+            var video = document.getElementById('rickroll-video');
+            video.muted = false;  // Unmute the video
+            video.play();  // Start playing the video with sound
+        }
+    </script>
+</body>
+</html> 
